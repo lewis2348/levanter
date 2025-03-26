@@ -1,21 +1,21 @@
-const { Client, logger } = require('./lib/client')
-const { DATABASE, VERSION } = require('./config')
-const { stopInstance } = require('./lib/pm2')
-
-const start = async () => {
-  logger.info(`levanter ${VERSION}`)
-  try {
-    await DATABASE.authenticate({ retry: { max: 3 } })
-  } catch (error) {
-    const databaseUrl = process.env.DATABASE_URL
-    logger.error({ msg: 'Unable to connect to the database', error: error.message, databaseUrl })
-    return stopInstance()
-  }
-  try {
-    const bot = new Client()
-    await bot.connect()
-  } catch (error) {
-    logger.error(error)
-  }
-}
-start()
+git clone https://github.com/lyfe00011/levanter botName
+cd botName
+yarn installecho "SESSION_ID = Session_Id_you_Got_After_Scan_Dont_Add_This_Line_If_You_Can_Scan_From_Terminal_Itself
+PREFIX = .
+STICKER_PACKNAME = LyFE
+ALWAYS_ONLINE = false
+RMBG_KEY = null
+LANGUAG = en
+WARN_LIMIT = 3
+FORCE_LOGOUT = false
+BRAINSHOP = 159501,6pq8dPiYt7PdqHz3
+MAX_UPLOAD = 200
+REJECT_CALL = false
+SUDO = 989876543210
+TZ = Asia/Kolkata
+VPS = true
+AUTO_STATUS_VIEW = true
+SEND_READ = true
+AJOIN = true
+DISABLE_START_MESSAGE = false
+PERSONAL_MESSAGE = null" > config.envhttps://github.com/lyfe00011/levanter
